@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AHMED\\OneDrive\\Desktop\\Dotnet Core Projects\\IFix\\IFix.csproj": {}
+    "C:\\Users\\AHMED\\OneDrive\\Desktop\\Dotnet Core Projects\\IFix\\IFix\\IFix.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AHMED\\OneDrive\\Desktop\\Dotnet Core Projects\\IFix\\IFix.csproj": {
+    "C:\\Users\\AHMED\\OneDrive\\Desktop\\Dotnet Core Projects\\IFix\\IFix\\IFix.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AHMED\\OneDrive\\Desktop\\Dotnet Core Projects\\IFix\\IFix.csproj",
+        "projectUniqueName": "C:\\Users\\AHMED\\OneDrive\\Desktop\\Dotnet Core Projects\\IFix\\IFix\\IFix.csproj",
         "projectName": "IFix",
-        "projectPath": "C:\\Users\\AHMED\\OneDrive\\Desktop\\Dotnet Core Projects\\IFix\\IFix.csproj",
+        "projectPath": "C:\\Users\\AHMED\\OneDrive\\Desktop\\Dotnet Core Projects\\IFix\\IFix\\IFix.csproj",
         "packagesPath": "C:\\Users\\AHMED\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AHMED\\OneDrive\\Desktop\\Dotnet Core Projects\\IFix\\obj\\",
+        "outputPath": "C:\\Users\\AHMED\\OneDrive\\Desktop\\Dotnet Core Projects\\IFix\\IFix\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

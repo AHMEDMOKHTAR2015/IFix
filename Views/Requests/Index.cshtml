@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    List<string> statusList = new List<string> { "Waiting", "Rejected", "Accepted" };
 }
 
 <h1>Index</h1>
@@ -9,6 +10,11 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+
+
+@Html.DropDownListFor(model => model.First().request_status, new SelectList(statusList), "Select Status")
+
 <table class="table">
     <thead>
         <tr>
@@ -16,13 +22,28 @@
                 @Html.DisplayNameFor(model => model.Date)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+                @Html.DisplayNameFor(model => model.Problem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job_type)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Cost)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Payment_method)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Complaint)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Car)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.request_status)
             </th>
             <th></th>
         </tr>
@@ -34,13 +55,28 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.DisplayFor(modelItem => item.Problem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Job_type)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Cost)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Payment_method)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Complaint.Id)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Car.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.request_status)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

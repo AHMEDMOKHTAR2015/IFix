@@ -27,5 +27,14 @@ namespace IFix.Data
         public DbSet<Transaction> Transactions { get; set; }
 
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Complaint>()
+                .HasOne(c => c.Request)
+                .WithOne(r => r.Complaint)
+                .HasForeignKey<Request>(r => r.ComplaintId);
+        }
+
+
     }
 }

@@ -22,7 +22,12 @@ namespace IFix.Controllers
         // GET: Requests
         public async Task<IActionResult> Index()
         {
-            var applicationDBContext = _context.Requests.Include(r => r.Car);
+            var applicationDBContext = _context.Requests.Include(r => r.Car).Include(r => r.Complaint);
+
+            List<string> statusList = new List<string> { "Waiting", "Rejected", "Accepted" };
+
+            ViewBag.StatusList = statusList;
+
             return View(await applicationDBContext.ToListAsync());
         }
 
@@ -36,6 +41,7 @@ namespace IFix.Controllers
 
             var request = await _context.Requests
                 .Include(r => r.Car)
+                .Include(r => r.Complaint)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (request == null)
             {
@@ -49,6 +55,7 @@ namespace IFix.Controllers
         public IActionResult Create()
         {
             ViewData["CarId"] = new SelectList(_context.Cars, "Id", "Id");
+            ViewData["ComplaintId"] = new SelectList(_context.Complaints, "Id", "Id");
             return View();
         }
 
@@ -57,7 +64,7 @@ namespace IFix.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CarId,Date,Description,Cost")] Request request)
+        public async Task<IActionResult> Create([Bind("Id,Date,Problem,Address,Job_type,Cost,Payment_method,ComplaintId,CarId,request_status")] Request request)
         {
             if (ModelState.IsValid)
             {
@@ -66,6 +73,7 @@ namespace IFix.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CarId"] = new SelectList(_context.Cars, "Id", "Id", request.CarId);
+            ViewData["ComplaintId"] = new SelectList(_context.Complaints, "Id", "Id", request.ComplaintId);
             return View(request);
         }
 
@@ -83,6 +91,7 @@ namespace IFix.Controllers
                 return NotFound();
             }
             ViewData["CarId"] = new SelectList(_context.Cars, "Id", "Id", request.CarId);
+            ViewData["ComplaintId"] = new SelectList(_context.Complaints, "Id", "Id", request.ComplaintId);
             return View(request);
         }
 
@@ -91,7 +100,7 @@ namespace IFix.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CarId,Date,Description,Cost")] Request request)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Problem,Address,Job_type,Cost,Payment_method,ComplaintId,CarId,request_status")] Request request)
         {
             if (id != request.Id)
             {
@@ -119,6 +128,7 @@ namespace IFix.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CarId"] = new SelectList(_context.Cars, "Id", "Id", request.CarId);
+            ViewData["ComplaintId"] = new SelectList(_context.Complaints, "Id", "Id", request.ComplaintId);
             return View(request);
         }
 
@@ -132,6 +142,7 @@ namespace IFix.Controllers
 
             var request = await _context.Requests
                 .Include(r => r.Car)
+                .Include(r => r.Complaint)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (request == null)
             {

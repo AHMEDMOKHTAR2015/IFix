@@ -17,119 +17,159 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = IFix
 build_property.RootNamespace = IFix
-build_property.ProjectDir = C:\Users\AHMED\OneDrive\Desktop\Dotnet Core Projects\IFix\
+build_property.ProjectDir = C:\Users\AHMED\OneDrive\Desktop\Dotnet Core Projects\IFix\IFix\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\AHMED\OneDrive\Desktop\Dotnet Core Projects\IFix
+build_property.MSBuildProjectDirectory = C:\Users\AHMED\OneDrive\Desktop\Dotnet Core Projects\IFix\IFix
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Cars/Create.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Cars/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Cars/Delete.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Cars/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Cars/Details.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Cars/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Cars/Edit.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Cars/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Cars/Index.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Cars/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Complaints/Create.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Complaints/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGxhaW50c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Complaints/Delete.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Complaints/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGxhaW50c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Complaints/Details.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Complaints/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGxhaW50c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Complaints/Edit.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Complaints/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGxhaW50c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Complaints/Index.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Complaints/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGxhaW50c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Home/Index.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Home/Privacy.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/People/Create.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/People/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVvcGxlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/People/Delete.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/People/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVvcGxlXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/People/Details.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/People/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVvcGxlXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/People/Edit.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/People/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVvcGxlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/People/Index.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/People/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVvcGxlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Requests/Create.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Requests/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Requests/Delete.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Requests/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Requests/Details.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Requests/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Requests/Edit.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Requests/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Requests/Index.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Requests/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Shared/Error.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/ServiceAlerts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUFsZXJ0c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/ServiceAlerts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUFsZXJ0c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/ServiceAlerts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUFsZXJ0c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/ServiceAlerts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUFsZXJ0c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/ServiceAlerts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUFsZXJ0c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/ServiceProviders/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/ServiceProviders/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/ServiceProviders/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/ServiceProviders/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/ServiceProviders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/_ViewImports.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/_ViewStart.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/Views/Shared/_Layout.cshtml]
+[C:/Users/AHMED/OneDrive/Desktop/Dotnet Core Projects/IFix/IFix/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-8ik99vpy8y

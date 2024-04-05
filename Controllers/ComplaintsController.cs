@@ -22,7 +22,7 @@ namespace IFix.Controllers
         // GET: Complaints
         public async Task<IActionResult> Index()
         {
-            var applicationDBContext = _context.Complaints.Include(c => c.Person).Include(c => c.Request);
+            var applicationDBContext = _context.Complaints.Include(c => c.Person);
             return View(await applicationDBContext.ToListAsync());
         }
 
@@ -36,7 +36,6 @@ namespace IFix.Controllers
 
             var complaint = await _context.Complaints
                 .Include(c => c.Person)
-                .Include(c => c.Request)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (complaint == null)
             {
@@ -50,7 +49,6 @@ namespace IFix.Controllers
         public IActionResult Create()
         {
             ViewData["PersonId"] = new SelectList(_context.Persons, "Id", "Id");
-            ViewData["RequestId"] = new SelectList(_context.Requests, "Id", "Id");
             return View();
         }
 
@@ -61,14 +59,12 @@ namespace IFix.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,PersonId,RequestId,Other,Absence,Quality,Attitude,Speed")] Complaint complaint)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(complaint);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+
+            _context.Add(complaint);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
             ViewData["PersonId"] = new SelectList(_context.Persons, "Id", "Id", complaint.PersonId);
-            ViewData["RequestId"] = new SelectList(_context.Requests, "Id", "Id", complaint.RequestId);
             return View(complaint);
         }
 
@@ -86,7 +82,6 @@ namespace IFix.Controllers
                 return NotFound();
             }
             ViewData["PersonId"] = new SelectList(_context.Persons, "Id", "Id", complaint.PersonId);
-            ViewData["RequestId"] = new SelectList(_context.Requests, "Id", "Id", complaint.RequestId);
             return View(complaint);
         }
 
@@ -123,7 +118,6 @@ namespace IFix.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["PersonId"] = new SelectList(_context.Persons, "Id", "Id", complaint.PersonId);
-            ViewData["RequestId"] = new SelectList(_context.Requests, "Id", "Id", complaint.RequestId);
             return View(complaint);
         }
 
@@ -137,7 +131,6 @@ namespace IFix.Controllers
 
             var complaint = await _context.Complaints
                 .Include(c => c.Person)
-                .Include(c => c.Request)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (complaint == null)
             {

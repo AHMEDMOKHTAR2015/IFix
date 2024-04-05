@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IFix.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240403173909_InitialCreate")]
+    [Migration("20240405202117_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -116,8 +116,6 @@ namespace IFix.Migrations
 
                     b.HasIndex("PersonId");
 
-                    b.HasIndex("RequestId");
-
                     b.ToTable("Complaints");
                 });
 
@@ -161,22 +159,38 @@ namespace IFix.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CarId")
                         .HasColumnType("int");
 
-                    b.Property<double?>("Cost")
-                        .HasColumnType("float");
+                    b.Property<int>("ComplaintId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Cost")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
+                    b.Property<int>("Job_type")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Payment_method")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Problem")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CarId");
+
+                    b.HasIndex("ComplaintId")
+                        .IsUnique();
 
                     b.ToTable("Requests");
                 });
@@ -227,17 +241,23 @@ namespace IFix.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ProviderId")
+                    b.Property<int>("RequestId")
                         .HasColumnType("int");
 
-                    b.Property<int>("RequestId")
+                    b.Property<int>("ServiceProvidersId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("new_price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("request_status")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProviderId");
-
                     b.HasIndex("RequestId");
+
+                    b.HasIndex("ServiceProvidersId");
 
                     b.ToTable("ServiceAlerts");
                 });
@@ -333,15 +353,7 @@ namespace IFix.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("IFix.Models.Request", "Request")
-                        .WithMany()
-                        .HasForeignKey("RequestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Person");
-
-                    b.Navigation("Request");
                 });
 
             modelBuilder.Entity("IFix.Models.Request", b =>
@@ -352,7 +364,15 @@ namespace IFix.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("IFix.Models.Complaint", "Complaint")
+                        .WithOne("Request")
+                        .HasForeignKey("IFix.Models.Request", "ComplaintId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Car");
+
+                    b.Navigation("Complaint");
                 });
 
             modelBuilder.Entity("IFix.Models.Review", b =>
@@ -364,7 +384,7 @@ namespace IFix.Migrations
                         .IsRequired();
 
                     b.HasOne("IFix.Models.Request", "Request")
-                        .WithMany("Reviews")
+                        .WithMany()
                         .HasForeignKey("RequestId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -376,21 +396,21 @@ namespace IFix.Migrations
 
             modelBuilder.Entity("IFix.Models.ServiceAlert", b =>
                 {
-                    b.HasOne("IFix.Models.ServiceProviders", "Provider")
-                        .WithMany()
-                        .HasForeignKey("ProviderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("IFix.Models.Request", "Request")
-                        .WithMany()
+                        .WithMany("ServiceAlerts")
                         .HasForeignKey("RequestId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Provider");
+                    b.HasOne("IFix.Models.ServiceProviders", "ServiceProviders")
+                        .WithMany()
+                        .HasForeignKey("ServiceProvidersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Request");
+
+                    b.Navigation("ServiceProviders");
                 });
 
             modelBuilder.Entity("IFix.Models.Transaction", b =>
@@ -417,6 +437,12 @@ namespace IFix.Migrations
                     b.Navigation("Requests");
                 });
 
+            modelBuilder.Entity("IFix.Models.Complaint", b =>
+                {
+                    b.Navigation("Request")
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("IFix.Models.Person", b =>
                 {
                     b.Navigation("Cars");
@@ -428,7 +454,7 @@ namespace IFix.Migrations
 
             modelBuilder.Entity("IFix.Models.Request", b =>
                 {
-                    b.Navigation("Reviews");
+                    b.Navigation("ServiceAlerts");
                 });
 
             modelBuilder.Entity("IFix.Models.ServiceProviders", b =>

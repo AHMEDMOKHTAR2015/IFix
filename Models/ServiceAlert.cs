@@ -1,15 +1,35 @@
-﻿using System;
+﻿using Microsoft.DotNet.Scaffolding.Shared;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace IFix.Models
 {
-    public partial class ServiceAlert
-    {
-        public int Id { get; set; }
-        public int RequestId { get; set; }
-        public int ProviderId { get; set; }
+    
 
-        public virtual ServiceProviders Provider { get; set; } = null!;
-        public virtual Request Request { get; set; } = null!;
+    public class ServiceAlert
+    {
+    
+
+        [Key]
+        public int Id { get; set; }
+
+        [DefaultValue("Waiting")]
+        public Status request_status { get; set; }
+
+        public decimal? new_price { get; set; }
+
+
+        public int RequestId { get; set; }
+        public virtual Request Request { get; set; }
+
+
+        public int ServiceProvidersId { get; set; }
+        public virtual ServiceProviders ServiceProviders { get; set; }
+
+
+
     }
 }

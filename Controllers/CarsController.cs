@@ -59,14 +59,12 @@ namespace IFix.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,PersonId,Manufacturer,Model,Year,Color")] Car car)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(car);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+
+            _context.Add(car);
+            await _context.SaveChangesAsync();
+
             ViewData["PersonId"] = new SelectList(_context.Persons, "Id", "Id", car.PersonId);
-            return View(car);
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Cars/Edit/5

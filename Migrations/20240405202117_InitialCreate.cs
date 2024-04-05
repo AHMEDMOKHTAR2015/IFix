@@ -86,6 +86,31 @@ namespace IFix.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Complaints",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PersonId = table.Column<int>(type: "int", nullable: false),
+                    RequestId = table.Column<int>(type: "int", nullable: false),
+                    Other = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Absence = table.Column<bool>(type: "bit", nullable: false),
+                    Quality = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Attitude = table.Column<bool>(type: "bit", nullable: false),
+                    Speed = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Complaints", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Complaints_Persons_PersonId",
+                        column: x => x.PersonId,
+                        principalTable: "Persons",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Transactions",
                 columns: table => new
                 {
@@ -121,10 +146,14 @@ namespace IFix.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CarId = table.Column<int>(type: "int", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Cost = table.Column<double>(type: "float", nullable: true)
+                    Problem = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Job_type = table.Column<int>(type: "int", nullable: false),
+                    Cost = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Payment_method = table.Column<int>(type: "int", nullable: false),
+                    ComplaintId = table.Column<int>(type: "int", nullable: false),
+                    CarId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -135,37 +164,12 @@ namespace IFix.Migrations
                         principalTable: "Cars",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Complaints",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PersonId = table.Column<int>(type: "int", nullable: false),
-                    RequestId = table.Column<int>(type: "int", nullable: false),
-                    Other = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Absence = table.Column<bool>(type: "bit", nullable: false),
-                    Quality = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Attitude = table.Column<bool>(type: "bit", nullable: false),
-                    Speed = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Complaints", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Complaints_Persons_PersonId",
-                        column: x => x.PersonId,
-                        principalTable: "Persons",
+                        name: "FK_Requests_Complaints_ComplaintId",
+                        column: x => x.ComplaintId,
+                        principalTable: "Complaints",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
-                    table.ForeignKey(
-                        name: "FK_Complaints_Requests_RequestId",
-                        column: x => x.RequestId,
-                        principalTable: "Requests",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -205,8 +209,10 @@ namespace IFix.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    request_status = table.Column<int>(type: "int", nullable: false),
+                    new_price = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     RequestId = table.Column<int>(type: "int", nullable: false),
-                    ProviderId = table.Column<int>(type: "int", nullable: false)
+                    ServiceProvidersId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -218,8 +224,8 @@ namespace IFix.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ServiceAlerts_ServicesProviders_ProviderId",
-                        column: x => x.ProviderId,
+                        name: "FK_ServiceAlerts_ServicesProviders_ServiceProvidersId",
+                        column: x => x.ServiceProvidersId,
                         principalTable: "ServicesProviders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -236,14 +242,15 @@ namespace IFix.Migrations
                 column: "PersonId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Complaints_RequestId",
-                table: "Complaints",
-                column: "RequestId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Requests_CarId",
                 table: "Requests",
                 column: "CarId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Requests_ComplaintId",
+                table: "Requests",
+                column: "ComplaintId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reviews_PersonId",
@@ -256,14 +263,14 @@ namespace IFix.Migrations
                 column: "RequestId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ServiceAlerts_ProviderId",
-                table: "ServiceAlerts",
-                column: "ProviderId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ServiceAlerts_RequestId",
                 table: "ServiceAlerts",
                 column: "RequestId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ServiceAlerts_ServiceProvidersId",
+                table: "ServiceAlerts",
+                column: "ServiceProvidersId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Transactions_PersonId",
@@ -283,9 +290,6 @@ namespace IFix.Migrations
                 name: "Admins");
 
             migrationBuilder.DropTable(
-                name: "Complaints");
-
-            migrationBuilder.DropTable(
                 name: "Reviews");
 
             migrationBuilder.DropTable(
@@ -302,6 +306,9 @@ namespace IFix.Migrations
 
             migrationBuilder.DropTable(
                 name: "Cars");
+
+            migrationBuilder.DropTable(
+                name: "Complaints");
 
             migrationBuilder.DropTable(
                 name: "Persons");
